@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel – Laços de Amor</title>
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/admin.css">
+</head>
+<body>
+<header>
+  <a href="/" class="logo">🐾 Laços de Amor</a>
+  <nav><a href="dashboard.html" class="ativo">Painel</a><a href="animais.html">Animais</a><a href="eventos.html">Eventos</a><a href="voluntarios.html">Voluntários</a><a href="/">Ver site</a><a href="./login.html" id="btn-sair" class="cta">Sair</a></nav>
+</header>
+<main>
+  <div class="aviso" id="aviso" hidden></div>
+
+  <div class="pagehead">
+    <h2>Painel</h2>
+    <p>Resumo do que está acontecendo na ONG.</p>
+  </div>
+
+  <section class="indicadores" id="indicadores"></section>
+
+  <h3>Últimos animais cadastrados</h3>
+  <div class="tabela-caixa">
+    <table class="tabela">
+      <thead>
+        <tr><th>Nome</th><th>Espécie</th><th>Porte</th><th>Status</th></tr>
+      </thead>
+      <tbody id="ultimos-animais"></tbody>
+    </table>
+  </div>
+
+  <h3 style="margin-top:40px">Inscrições novas de voluntários</h3>
+  <div class="tabela-caixa">
+    <table class="tabela">
+      <thead>
+        <tr><th>Nome</th><th>E-mail</th><th>Data</th></tr>
+      </thead>
+      <tbody id="voluntarios-novos"></tbody>
+    </table>
+  </div>
+  <!-- Cadastro de novos administradores -->
+  <section id="secao-administradores" hidden>
+    <h3 style="margin-top:40px">Gerenciar administradores</h3>
+    <p>Cadastre novos usuários para acessar o painel administrativo.</p>
+    <form id="form-novo-admin">
+      <div class="form-linha">
+        <div class="campo">
+          <label for="admin-nome">Nome completo *</label>
+          <input type="text" id="admin-nome" name="nome" placeholder="Digite o nome completo" maxlength="100" required>
+        </div>
+        <div class="campo">
+          <label for="admin-email">E-mail *</label>
+          <input type="email" id="admin-email" name="email" placeholder="exemplo@email.com" maxlength="150" required></div>
+          <div class="campo">
+            <label for="admin-senha">Senha *</label>
+            <input type="password" id="admin-senha" name="senha" placeholder="Mínimo de 8 caracteres" minlength="8" maxlength="72" required>
+            <small class="campo-ajuda">
+              A senha deve conter entre 8 e 72 caracteres.
+            </small>
+          </div>
+          <div class="campo">
+            <label for="admin-tipo">Tipo de usuário *</label>
+            <select id="admin-tipo" name="tipo" required>
+              <option value="comum">Administrador comum</option>
+              <option value="principal">Administrador principal</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-botoes">
+          <button type="submit" class="btn">
+            Cadastrar administrador
+          </button>
+        </div>
+      </form>
+  <!-- Lista de usuários cadastrados -->
+   <h3 style="margin-top:40px">Usuários cadastrados</h3>
+   <p>
+    Consulte os usuários que possuem ou já possuíram acesso ao painel administrativo.
+  </p>
+  <div class="tabela-caixa">
+    <table class="tabela">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>Tipo</th>
+          <th>Status</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabela-usuarios">
+        <!-- O JavaScript preencherá esta tabela. -->
+        </tbody>
+      </table>
+    </div>
+</section>
+</main>
+<footer class="admin">Laços de Amor · Endereço da ONG · E-mail da ONG</footer>
+<script src="../../js/api.js"></script>
+<script src="../../js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+/*ANIMAIS.CSS Estilos só da página de animais (animais.html)*/
+
+/* espaço entre o título e os cartões */
+.lista {
+    margin-top: 30px;
+}

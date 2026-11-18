@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entrar – Painel Laços de Amor</title>
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/admin.css">
+</head>
+<body>
+<header>
+  <a href="/" class="logo">🐾 Laços de Amor</a>
+  <nav><a href="/">Início</a><a href="../animais.html">Animais</a><a href="../eventos.html">Eventos</a><a href="login.html" class="cta ativo">Admin</a></nav>
+</header>
+<main>
+  <section class="login">
+    <div class="lado">
+      <h2>Área administrativa</h2>
+      <p>Acesso restrito. Aqui a equipe da ONG gerencia os animais para adoção, os eventos e as inscrições de voluntários.</p>
+    </div>
+    <form id="form-login" novalidate>
+      <h3>Entrar no painel</h3>
+      <div>
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" autocomplete="username" placeholder="voce@email.com">
+      </div>
+      <div>
+        <label for="senha">Senha</label>
+        <input id="senha" name="senha" type="password" autocomplete="current-password" placeholder="Sua senha">
+      </div>
+      <p class="erro-campo" id="erro-login"></p>
+      <button class="btn" type="submit">Entrar</button>
+      <span class="dica">Acesso de demonstração:<br><b>admin@lacosdeamor.org</b> · senha <b>admin123</b></span>
+    </form>
+  </section>
+</main>
+<footer class="admin">Laços de Amor · Endereço da ONG · E-mail da ONG</footer>
+<script src="../../js/api.js"></script>
+<script src="../../js/admin.js"></script>
+</body>
+</html>

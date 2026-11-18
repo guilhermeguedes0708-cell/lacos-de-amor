@@ -1,0 +1,175 @@
+/* INDEX.CSS = Estilos só da página inicial (index.html)*/
+
+
+/* parte de cima: texto de um lado e a bolinha roxa do outro */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.hero p {
+    font-size: 19px;
+    color: #666666;
+    width: 500px;
+}
+
+/* os dois botões ficam lado a lado */
+.botoes {
+    margin-top: 25px;
+}
+
+.botoes a {
+    margin-right: 10px;
+}
+
+/* bolinha roxa com o cachorro dentro */
+.arte {
+    width: 350px;
+    height: 350px;
+    background-color: #7c3aed;
+    border-radius: 50%;/* deixa redondo */
+    font-size: 130px;
+    text-align: center;
+    padding-top: 90px;
+}
+/* faixa com os números (animais adotados, etc) */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f3edfc;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* o número grande */
+.stats b {
+    display: block;
+    font-size: 36px;
+    color: #7c3aed;
+}
+
+.stats span {
+    color: #666666;
+}
+/* ===== FORMULÁRIO DE VOLUNTARIADO ===== */
+
+.voluntariado {
+  max-width: 850px;
+  margin: 70px auto;
+  padding: 0 20px;
+}
+
+.voluntariado .pagehead {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.voluntariado .pagehead h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.voluntariado .pagehead p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Cartão do formulário */
+#form-voluntario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 22px;
+  padding: 35px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Rótulos dos campos */
+#form-voluntario label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: -5px;
+  color: #333;
+}
+
+/* Campos do formulário */
+#form-voluntario input,
+#form-voluntario select,
+#form-voluntario textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font: inherit;
+  background: #fafafa;
+  box-sizing: border-box;
+}
+
+/* Destaque ao selecionar um campo */
+#form-voluntario input:focus,
+#form-voluntario select:focus,
+#form-voluntario textarea:focus {
+  outline: none;
+  border-color: #8b3df0;
+  box-shadow: 0 0 0 3px rgba(139, 61, 240, 0.12);
+}
+
+/* Campos maiores */
+#form-voluntario label[for="vol-nome"],
+#form-voluntario #vol-nome,
+#form-voluntario label[for="vol-motivacao"],
+#form-voluntario #vol-motivacao {
+  grid-column: 1 / -1;
+}
+
+/* Botão de envio */
+#form-voluntario button {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 15px;
+  padding: 14px 35px;
+  cursor: pointer;
+}
+
+/* Mensagens de retorno */
+#mensagem-voluntario {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+/* Ajustes para celular */
+@media (max-width: 650px) {
+  #form-voluntario {
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+
+  #form-voluntario label,
+  #form-voluntario input,
+  #form-voluntario select,
+  #form-voluntario textarea {
+    grid-column: 1 / -1;
+  }
+
+  .voluntariado .pagehead h2 {
+    font-size: 26px;
+  }
+}
+/* Mantém o rótulo e o campo juntos */
+.campo-voluntario {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Nome e motivação ocupam toda a largura */
+.campo-voluntario:has(#vol-nome),
+.campo-voluntario:has(#vol-motivacao) {
+  grid-column: 1 / -1;
+}

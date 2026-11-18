@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voluntários – Painel Laços de Amor</title>
+<link rel="stylesheet" href="../../css/base.css">
+<link rel="stylesheet" href="../../css/admin.css">
+</head>
+<body>
+<header>
+  <a href="/" class="logo">🐾 Laços de Amor</a>
+  <nav><a href="dashboard.html">Painel</a><a href="animais.html">Animais</a><a href="eventos.html">Eventos</a><a href="voluntarios.html" class="ativo">Voluntários</a><a href="/">Ver site</a><a href="#" id="btn-sair" class="cta">Sair</a></nav>
+</header>
+<main>
+  <div class="aviso" id="aviso" hidden></div>
+
+  <div class="pagehead">
+    <h2>Inscrições de voluntários</h2>
+    <p class="contagem" id="contagem-voluntarios">Carregando…</p>
+  </div>
+
+  <div class="filtros">
+    <div class="campo">
+      <label for="filtro-busca">Buscar</label>
+      <input type="search" id="filtro-busca" placeholder="Nome, e-mail, telefone ou mensagem">
+    </div>
+    <div class="campo">
+      <label for="filtro-status">Status</label>
+      <select id="filtro-status">
+        <option value="">Todos</option>
+        <option value="Pendente">Pendentes</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="tabela-caixa">
+    <table class="tabela">
+      <thead>
+        <tr><th>Nome</th><th>E-mail</th><th>Telefone</th><th>Enviado em</th><th>Status</th><th>Ações</th></tr>
+      </thead>
+      <tbody id="corpo-voluntarios"></tbody>
+    </table>
+  </div>
+</main>
+
+<div class="modal-fundo" id="modal-voluntario" hidden>
+  <div class="modal">
+    <h3>Detalhes da inscrição</h3>
+    <div id="detalhe-voluntario"></div>
+    <div class="form-botoes">
+      <button type="button" class="btn ghost" id="btn-fechar-voluntario">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<footer class="admin">Laços de Amor · Endereço da ONG · E-mail da ONG</footer>
+<script src="../../js/api.js"></script>
+<script src="../../js/admin.js"></script>
+</body>
+</html>

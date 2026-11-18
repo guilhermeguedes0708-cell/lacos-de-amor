@@ -1,0 +1,261 @@
+/* Roxo: #7c3aed
+   Roxo escuro: #5b21b6
+   Roxo clarinho: #f3edfc*/
+
+/* trava o site no tema claro: impede que o navegador (modo escuro
+   automatico, extensoes, config do sistema) inverta as cores sozinho */
+:root {
+    color-scheme: light only;
+}
+
+
+/* tirando a margem que o navegador coloca sozinho */
+body {
+    margin: 0;
+    background-color: #ffffff;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+}
+
+/* faz o tamanho das caixas ficar melhor */
+* {
+    box-sizing: border-box;
+}
+
+/* títulos */
+h1 {
+    font-size: 50px;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 34px;
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+/* tirando o sublinhado e a cor azul dos links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* MENU */
+
+header {
+    display: flex;                  /* coloca logo e menu lado a lado */
+    justify-content: space-between; /* logo na esquerda, menu na direita */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;                 /* centraliza */
+    padding: 20px 30px;
+}
+
+/* nome do site */
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #7c3aed;
+}
+
+nav a {
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: #666666;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+/* quando passa o mouse em cima */
+nav a:hover {
+    background-color: #f3edfc;
+    color: #7c3aed;
+}
+
+/* link da página que a pessoa está agora */
+nav a.ativo {
+    background-color: #f3edfc;
+    color: #7c3aed;
+}
+
+/* botão Entrar do menu */
+nav a.cta {
+    background-color: #7c3aed;
+    color: white;
+}
+
+
+/* CONTEÚDO PRINCIPAL  */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px 60px 30px;
+}
+
+/* título e frase embaixo (animais e eventos) */
+.pagehead {
+    padding-top: 30px;
+}
+
+.pagehead p {
+    color: #666666;
+    margin-top: 0;
+}
+
+
+/* BOTÕES */
+
+.btn {
+    display: inline-block;
+    background-color: #7c3aed;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 25px;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;   /* mão ao passar o cursor */
+}
+
+.btn:hover {
+    background-color: #5b21b6;
+}
+
+/* botão só com a borda sem fundo */
+.btn.ghost {
+    background-color: white;
+    color: #7c3aed;
+    border: 2px solid #7c3aed;
+}
+
+.btn.ghost:hover {
+    background-color: #7c3aed;
+    color: white;
+}
+
+
+/* CARTÕES DOS ANIMAIS */
+
+/* 3 cartões por linha */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+}
+
+.card {
+    border: 1px solid #e0d4f5;
+    border-radius: 15px;
+    overflow: hidden;   /* para a foto não sair do canto arredondado */
+}
+
+/* espaço onde vai a foto do cahcorro */
+.card .pic {
+    height: 260px;
+    background-color: #f3edfc;
+    color: #666666;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* foto do cachorro dentro do cartão */
+.card .pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* corta a foto para caber sem esticar */
+    display: block;
+}
+
+/* posição de cada foto, para o rosto do cachorro aparecer no cartão */
+.card .pic img.angel {
+    object-position: center 25%;
+}
+
+.card .pic img.bella {
+    object-position: center 28%;
+}
+
+.card .pic img.thor {
+    object-position: center 43%;
+}
+
+.card .pic img.naty {
+    object-position: center 40%;
+}
+
+.card .pic img.princesa {
+    object-position: center 49%;
+}
+
+.card .body {
+    padding: 20px;
+}
+
+.card p {
+    color: #666666;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* etiquetas(cahcorro, idade, porte) */
+.tag {
+    display: inline-block;
+    background-color: #f3edfc;
+    color: #7c3aed;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+
+/* RODAPÉ */
+
+footer {
+    border-top: 1px solid #e0d4f5;
+    text-align: center;
+    color: #666666;
+    padding: 25px;
+    font-size: 15px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+#voluntariado {
+  scroll-margin-top: 30px;
+}
+/* Personalização do select de administradores */
+#admin-tipo {
+  background-color: #f5f0ff;
+  color: #4c1d95;
+  border: 2px solid #a78bfa;
+  border-radius: 10px;
+  padding: 12px 36px 12px 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Destaque quando o usuário seleciona o campo */
+#admin-tipo:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+/* Cor das opções, quando suportada pelo navegador */
+#admin-tipo option {
+  background-color: #ffffff;
+  color: #4c1d95;
+}

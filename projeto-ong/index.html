@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Início – Laços de Amor</title>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">🐾 Laços de Amor</a>
+  <nav><a href="index.html" class="ativo">Início</a><a href="html/animais.html">Animais</a><a href="html/eventos.html">Eventos</a><a href="#voluntariado">Voluntários</a><a href="html/admin/login.html" class="cta">Entrar</a></nav>
+</header>
+<main>
+  <section class="hero">
+    <div>
+      <h1>Um novo lar muda duas vidas.</h1>
+      <p>Conectamos cães e gatos resgatados a famílias que querem amar de verdade. Conheça quem está esperando por você.</p>
+      <div class="botoes">
+        <a class="btn" href="html/animais.html">Ver animais</a>
+        <a class="btn ghost" href="html/eventos.html">Próximos eventos</a>
+      </div>
+    </div>
+    <div class="arte" aria-hidden="true">🐶</div>
+  </section>
+
+  <section class="stats">
+    <div>
+      <b id="total-adotados">...</b>
+      <span>animais adotados</span>
+    </div>
+    
+    <div>
+      <b id="total-disponiveis">...</b>
+      <span>aguardando um lar</span>
+    </div>
+    
+    <div>
+      <b id="total-cadastrados">...</b>
+      <span>animais cadastrados</span>
+    </div>
+  </section>
+
+  <h2>Quem espera por você</h2>
+  <section class="grid lista" id="lista-animais">
+  <p>Carregando animais disponíveis...</p>
+</section>
+<!-- Formulário público para inscrição de voluntários. -->
+<section class="voluntariado" id="voluntariado">
+
+  <div class="pagehead">
+    <h2>💚 Seja um voluntário</h2>
+    <p>
+      Quer fazer a diferença na vida dos nossos animais?
+      Preencha o formulário e venha fazer parte dessa corrente de amor!
+    </p>
+  </div>
+
+  <!-- Formulário de inscrição. -->
+  <form id="form-voluntario">
+
+    <div class="campo-voluntario">
+      <label for="vol-nome">Nome completo *</label>
+      <input type="text" id="vol-nome" name="nome" maxlength="100" required>
+    </div>
+
+    <label for="vol-email">E-mail *</label>
+    <input
+      type="email"
+      id="vol-email"
+      name="email"
+      maxlength="150"
+      required
+    >
+
+    <label for="vol-telefone">Telefone *</label>
+    <input
+      type="tel"
+      id="vol-telefone"
+      name="telefone"
+      maxlength="20"
+      placeholder="(11) 99999-9999"
+      required
+    >
+
+    <label for="vol-area">Como gostaria de ajudar? *</label>
+    <select id="vol-area" name="area_interesse" required>
+      <option value="">Selecione uma opção</option>
+      <option value="Cuidados com os animais">Cuidados com os animais</option>
+      <option value="Eventos e feiras de adoção">Eventos e feiras de adoção</option>
+      <option value="Divulgação">Divulgação e redes sociais</option>
+      <option value="Transporte">Transporte dos animais</option>
+      <option value="Outros">Outras atividades</option>
+    </select>
+
+    <label for="vol-disponibilidade">Disponibilidade *</label>
+    <select
+      id="vol-disponibilidade"
+      name="disponibilidade"
+      required
+    >
+      <option value="">Selecione uma opção</option>
+      <option value="Dias de semana">Dias de semana</option>
+      <option value="Finais de semana">Finais de semana</option>
+      <option value="Manhã">Manhã</option>
+      <option value="Tarde">Tarde</option>
+      <option value="Horários flexíveis">Horários flexíveis</option>
+    </select>
+
+    <label for="vol-motivacao">
+      Por que você gostaria de ser voluntário?
+    </label>
+    <textarea
+      id="vol-motivacao"
+      name="motivacao"
+      rows="4"
+      placeholder="Conte um pouquinho sobre você..."
+    ></textarea>
+
+    <button type="submit" class="btn">
+      Quero ser voluntário 💚
+    </button>
+
+    <!-- Espaço para mensagens de sucesso ou erro. -->
+    <p id="mensagem-voluntario" role="status" aria-live="polite"></p>
+
+  </form>
+</section>
+</main>
+<footer>Laços de Amor · Endereço da ONG · E-mail da ONG</footer>
+<script src="../js/api.js"></script>
+<script src="js/index.js"></script>
+<script src="../js/animais.js"></script>
+</body>
+</html>

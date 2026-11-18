@@ -1,0 +1,522 @@
+/* ============================================================
+   admin.css — Área administrativa
+   ------------------------------------------------------------
+   Depende de css/base.css (Pessoa 1), carregado ANTES deste.
+   Aqui só entra o que é exclusivo do admin: tabelas, filtros,
+   modais, indicadores e a tela de login. Cores, botões,
+   cartões, tags e menu vêm todos do base.css — uma fonte só.
+   ============================================================ */
+
+
+/* ---------- rodapé admin: mais discreto ---------- */
+footer.admin {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: none;
+    padding-top: 0;
+}
+
+
+/* ---------- cabeçalho das páginas internas ---------- */
+.cabecalho-pagina {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+.cabecalho-pagina h2 {
+    margin-bottom: 0;
+}
+
+.cabecalho-pagina .contagem {
+    color: #666666;
+    font-size: 15px;
+    margin: 4px 0 0;
+}
+
+.cabecalho-pagina .acoes {
+    margin-left: auto;
+}
+
+
+/* ---------- indicadores do painel ---------- */
+.indicadores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.indicador {
+    border: 1px solid #e0d4f5;
+    border-radius: 15px;
+    padding: 22px;
+    text-align: center;
+}
+
+.indicador b {
+    display: block;
+    font-size: 40px;
+    color: #7c3aed;
+    line-height: 1.1;
+}
+
+.indicador span {
+    color: #666666;
+    font-size: 15px;
+}
+
+
+/* ---------- tabelas ---------- */
+.tabela-caixa {
+    border: 1px solid #e0d4f5;
+    border-radius: 15px;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+table.tabela th {
+    text-align: left;
+    padding: 14px;
+    background-color: #f3edfc;
+    color: #7c3aed;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+table.tabela td {
+    padding: 14px;
+    border-top: 1px solid #e0d4f5;
+    vertical-align: middle;
+}
+
+table.tabela tbody tr:hover {
+    background-color: #faf7fe;
+}
+
+.acoes-tabela {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* botão pequeno para usar dentro da tabela */
+.btn.pequeno {
+    padding: 7px 16px;
+    font-size: 14px;
+}
+
+.btn.perigo {
+    background-color: #c0392b;
+}
+
+.btn.perigo:hover {
+    background-color: #96271c;
+}
+
+
+/* ---------- etiquetas de status ---------- */
+/* reaproveita o visual da .tag do base.css, só muda a cor */
+.tag.disponivel,
+.tag.publicado,
+.tag.lida {
+    background-color: #e3f4e9;
+    color: #1e7a45;
+}
+
+.tag.adotado,
+.tag.rascunho {
+    background-color: #f3edfc;
+    color: #7c3aed;
+}
+
+.tag.nova {
+    background-color: #fdeedd;
+    color: #a86a12;
+}
+
+.tag.cancelado {
+    background-color: #fbe3e0;
+    color: #b03123;
+}
+
+
+/* ---------- formulários ---------- */
+.form-linha {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1 1 200px;
+}
+
+.campo.largo {
+    flex: 1 1 100%;
+}
+
+.campo label {
+    font-size: 15px;
+    font-weight: bold;
+    color: #666666;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    padding: 11px 14px;
+    border: 1px solid #e0d4f5;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333333;
+    background-color: white;
+    width: 100%;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    outline: 2px solid #7c3aed;
+    outline-offset: 0;
+    border-color: #7c3aed;
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.form-botoes {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.erro-campo {
+    color: #b03123;
+    font-size: 13px;
+    min-height: 1em;
+}
+
+
+/* ---------- avisos ---------- */
+.aviso {
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 16px;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.aviso.sucesso {
+    background-color: #e3f4e9;
+    color: #1e7a45;
+}
+
+.aviso.erro {
+    background-color: #fbe3e0;
+    color: #96271c;
+}
+
+.aviso.info {
+    background-color: #f3edfc;
+    color: #5b21b6;
+}
+
+.aviso[hidden] {
+    display: none;
+}
+
+
+/* ---------- filtros ---------- */
+.filtros {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-top: 25px;
+}
+
+.filtros .campo {
+    flex: 0 1 240px;
+}
+
+
+/* ---------- estado vazio ---------- */
+.vazio {
+    text-align: center;
+    color: #666666;
+    padding: 50px 20px;
+}
+
+.vazio .icone {
+    display: block;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+
+/* ---------- tela de login do admin ---------- */
+.login {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.login .lado {
+    flex: 1;
+}
+
+.login .lado h2 {
+    color: #7c3aed;
+}
+
+.login .lado p {
+    color: #666666;
+}
+
+.login form {
+    flex: 0 0 400px;
+    border: 1px solid #e0d4f5;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.login form h3 {
+    margin-bottom: 20px;
+}
+
+.login form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.login form label {
+    font-size: 15px;
+    font-weight: bold;
+    color: #666666;
+}
+
+.login form input {
+    padding: 11px 14px;
+    border: 1px solid #e0d4f5;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    width: 100%;
+}
+
+.login form input:focus {
+    outline: 2px solid #7c3aed;
+    border-color: #7c3aed;
+}
+
+.login form .btn {
+    width: 100%;
+}
+
+.login form .erro-campo {
+    margin-bottom: 0;
+}
+
+.login form .dica {
+    display: block;
+    margin-top: 20px;
+    background-color: #f3edfc;
+    color: #5b21b6;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/* ---------- modal ---------- */
+.modal-fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(51, 51, 51, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 50;
+}
+
+.modal-fundo[hidden] {
+    display: none;
+}
+
+.modal {
+    background-color: white;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 640px;
+    max-height: 90%;
+    overflow-y: auto;
+    padding: 30px;
+}
+
+.modal h3 {
+    color: #7c3aed;
+    margin-bottom: 20px;
+}
+
+
+/* ---------- responsivo ---------- */
+@media (max-width: 900px) {
+    .indicadores {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .login {
+        flex-direction: column;
+        gap: 30px;
+        padding-top: 30px;
+    }
+
+    .login form {
+        flex: 1 1 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .indicadores {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecalho-pagina .acoes {
+        margin-left: 0;
+    }
+}
+/* Formulário de gerenciamento de administradores */
+
+#form-novo-admin {
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+#form-novo-admin .form-linha {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+#form-novo-admin .campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+#form-novo-admin .campo label {
+  font-weight: 600;
+  color: #333;
+}
+
+#form-novo-admin .campo input,
+#form-novo-admin .campo select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font: inherit;
+  background-color: #fff;
+}
+
+#form-novo-admin .campo input:focus,
+#form-novo-admin .campo select:focus {
+  outline: 2px solid #7c3aed;
+  outline-offset: 1px;
+}
+
+#form-novo-admin .campo-ajuda {
+  font-size: 12px;
+  color: #666;
+}
+
+#form-novo-admin .form-botoes {
+  margin-top: 24px;
+}
+
+@media (max-width: 650px) {
+  #form-novo-admin .form-linha {
+    grid-template-columns: 1fr;
+  }
+}
+/* Select personalizado */
+#form-novo-admin #admin-tipo {
+  appearance: none;
+  -webkit-appearance: none;
+
+  background-color: #f3e8ff;
+  color: #581c87;
+
+  border: 2px solid #9333ea;
+  border-radius: 12px;
+
+  padding: 14px 42px 14px 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  /* Setinha roxa personalizada */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%237c3aed' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 20px;
+
+  transition: 0.2s ease;
+}
+
+#form-novo-admin #admin-tipo:hover {
+  background-color: #ede9fe;
+  border-color: #7c3aed;
+}
+
+#form-novo-admin #admin-tipo:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.2);
+}

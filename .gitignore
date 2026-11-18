@@ -1,0 +1,14 @@
+# Dependências do Node.js
+node_modules/
+
+# Senhas e configurações privadas
+.env
+.env.*
+!.env.example
+
+# Arquivos temporários
+*.log
+.DS_Store
+Thumbs.db
+# Arquivos enviados pelo sistema
+uploads/
