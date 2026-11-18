@@ -104,7 +104,7 @@ formVoluntario.addEventListener('submit', async (evento) => {
 
   try {
     // Envia os dados ao backend.
-    const resposta = await fetch('/api/voluntarios', {
+    const resposta = await fetch('https://lacos-de-amor-production.up.railway.app/api/voluntarios', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
