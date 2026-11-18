@@ -34,7 +34,7 @@ const API = (() => {
   // Quando o back-end subir, aponte para a URL real:
   // const BASE_URL = 'http://localhost:3000';
   // E mude MODO_DEMO para false.
-  const BASE_URL = '';
+  const BASE_URL = 'https://lacos-de-amor-production.up.railway.app';
   const MODO_DEMO = false;
 
   const CHAVE_SESSAO = 'lacos_admin_sessao';
