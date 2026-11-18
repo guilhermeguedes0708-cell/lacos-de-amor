@@ -11,6 +11,8 @@ const express = require('express');
 // const express guarda a biblioteca que controla o servidor.
 //o POST cria um registro novo, enquanto o PUT altera um registro existente
 
+const cors = require('cors');
+
 const mysql = require('mysql2/promise');
 // Permite consultar o banco usando async e await.
 
@@ -29,6 +31,10 @@ const crypto = require('crypto');
 
 const app = express();
 // Cria o servidor Express.
+
+app.use(cors({
+  origin: 'https://lacos-de-amor.netlify.app'
+}));
 
 // Pasta onde as fotos dos animais serão armazenadas.
 const pastaUploads = path.join(__dirname, 'uploads');
