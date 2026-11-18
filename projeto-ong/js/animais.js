@@ -53,11 +53,11 @@ async function carregarAnimaisPublicos() {
 
       if (animal.foto) {
         const imagem = document.createElement('img');
-        imagem.src = animal.foto;
+        imagem.src = animal.foto.startsWith('/uploads/')? 'https://lacos-de-amor-production.up.railway.app' + animal.foto: animal.foto;
         imagem.alt = 'Foto de ' + animal.nome;
-        imagem.loading = 'lazy';
-        areaFoto.appendChild(imagem);
-      } else {
+        imagem.loading = 'lazy';areaFoto.appendChild(imagem);
+      } 
+      else {
         areaFoto.textContent = '🐾';
       }
 
